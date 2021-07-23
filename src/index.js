@@ -1,7 +1,7 @@
-function createStore(reducer){
+function createStore(candyReducer){
   let state;
   function dispatch(action){
-    let state= candyReducer(action, state)
+    state = candyReducer(state, action)
     render()
     }
     function getState(){
@@ -26,7 +26,7 @@ function render() {
     throw new Error("the store's state has not been defined yet")
   }
 };
-let store= createStore(reducer)
+let store = createStore(candyReducer)
 store.dispatch({type: '@@INIT'})
 // Use your createStore function and the functions provided here to create a store.
 // Once the store is created, call an initial dispatch.
