@@ -1,4 +1,4 @@
-createStore(reducer){
+function createStore(reducer){
   let state;
   function dispatch(action){
     let state= candyReducer(action, state)
